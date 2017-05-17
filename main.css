@@ -1,6 +1,6 @@
-*{
+/**{
 	box-sizing: border-box;
-}
+}*/
 
 header{
 	background-color: #6799FF;
@@ -42,13 +42,31 @@ h3{
 	font-family: 'Roboto', sans-serif;
 	font-size:20px;
 	margin:-5,-5;
+	max-width: 300px;
+	max-height:300px;
+}
+
+p{
+	max-width: 300px;
+	max-height:300px;
+}
+
+.resultsContainer{
+	text-align: center;
+}
+
+img{
+	width:300px;
 }
 
 .video{
-	margin-right: auto;
-	margin-right: auto;
+	padding-left:10px;
+	padding-right:10px;
+	text-align: center;
 	font-family: 'Roboto', sans-serif;
 	margin-top: 10px;
+	margin-right: 10px;
+	max-height: 500px;
 	border:solid skyblue 2px;
-	padding:20px, 20px;
+	display:inline-block;
 }
