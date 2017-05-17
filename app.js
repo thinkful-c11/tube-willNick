@@ -13,20 +13,6 @@ function getDataFromApi(searchTerm, callback){
 	$.getJSON(youtubeBaseUrl, query, callback);
 }
 
-// function getDataFromApi(searchTerm, callback){
-// 	var q = 'overwatch'
-// 	var request = gapi.client.youtube.search.list({
-//     q: q,
-//     part: 'snippet'
-//   });
-
-// 	request.execute(function(response){
-// 		var str = JSON.stringify(response.result);
-// 		console.log(str);
-// 	});
-
-// }
-
 const logData = (data) => {
 	console.log(data);
 };
