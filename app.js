@@ -44,7 +44,7 @@ let render = (state) => {
 	appState.results.forEach(object =>{
 		html += `
 			<div class="video">
-				<h2>Title:${object.title}</h2>
+				<h3>${object.title}</h3>
 				<img src="${object.imageSrc}">
 				<p>${object.description}</p>
 			</div>
