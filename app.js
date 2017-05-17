@@ -24,10 +24,13 @@ let modState = (data) => {
 		let image = object.snippet.thumbnails.high.url;
 		let title = object.snippet.title;
 		let desc = object.snippet.description;
+		let ID = object.id.videoId;
 		let video = {
 			imageSrc: image,
 			title: title,
 			description: desc,
+			IDlink: ID,
+
 		};
 
 		appState.results.push(video);
@@ -35,6 +38,7 @@ let modState = (data) => {
 	});
 
 	render(appState);
+
 }
 
 // render function
@@ -45,7 +49,7 @@ let render = (state) => {
 		html += `
 			<div class="video">
 				<h3>${object.title}</h3>
-				<img src="${object.imageSrc}">
+				<a href="https://www.youtube.com/watch?v=${object.IDlink}" target="_blank"><img src="${object.imageSrc}"></a>
 				<p>${object.description}</p>
 			</div>
 		`
@@ -69,4 +73,6 @@ function eventHandler(){
 }
 
 $(function(){eventHandler();});
+
+
 
