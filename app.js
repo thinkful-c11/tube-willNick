@@ -19,6 +19,7 @@ function getDataFromApi(searchTerm, callback){
 //modify state
 
 let modState = (data) => {
+	appState.results = [];
 	data.items.forEach(object => {
 		let image = object.snippet.thumbnails.high.url;
 		let title = object.snippet.title;
@@ -56,4 +57,14 @@ let render = (state) => {
 
 //event listener
 
-getDataFromApi("overwatch", modState);
+function eventHandler(){
+	$('.js-search-form').submit(function(e){
+		e.preventDefault();
+		let userInput = $(this).find('.js-query').val();
+		getDataFromApi(userInput, modState);
+		render(appState);
+	});
+}
+
+$(function(){eventHandler();});
+
