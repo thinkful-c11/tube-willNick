@@ -24,14 +24,17 @@ let modState = (data) => {
 		let image = object.snippet.thumbnails.high.url;
 		let title = object.snippet.title;
 		let desc = object.snippet.description;
-	let video = {
-		imageSrc: image,
-		title: title,
-		description: desc,
-	};
-	appState.results.push(video);
+		let video = {
+			imageSrc: image,
+			title: title,
+			description: desc,
+		};
+
+		appState.results.push(video);
 
 	});
+
+	render(appState);
 }
 
 // render function
@@ -62,7 +65,6 @@ function eventHandler(){
 		e.preventDefault();
 		let userInput = $(this).find('.js-query').val();
 		getDataFromApi(userInput, modState);
-		render(appState);
 	});
 }
 
